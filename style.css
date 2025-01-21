@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 20px;
+    color: #eae0c8;
+    text-align: center;
+    background-color: #2b2b28;
+    background-image: radial-gradient(circle, #2b2b28, #1f1f1d),
+                      url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Adding subtle pattern */
+    background-size: cover;
+}
+
+/* Title and Headings */
+h1, h2 {
+    color: #f4e7c3;
+    text-shadow: 1px 1px 3px #000;
+    margin-bottom: 20px;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    background-color: #3e3e3b;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar {
+    height: 20px;
+    width: 0%;
+    background-color: #d4a373;
+    text-align: center;
+    color: #2b2b28;
+    line-height: 20px;
+    font-weight: bold;
+    transition: width 0.3s ease;
+}
+
+/* Book List */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Book Item */
+.book-item {
+    background: #3e3e3b;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect for book item */
+.book-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.9);
+}
+
+/* Book Item Image */
+.book-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for book image */
+.book-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Book Item Text */
+.book-item h3 {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #f4e7c3;
+}
+
+.book-item p {
+    font-size: 0.9em;
+    color: #d4a373;
+}
+
+/* Body Background with Starry Image */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Starry background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* Book Item Details (at the bottom) */
+.book-item .details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: #f4e7c3;
+    text-align: left;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+    opacity: 0; /* Hide the details by default */
+    visibility: hidden; /* Ensure it's not displayed when not hovered */
+}
+
+/* Show details when hovering */
+.book-item:hover .details {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Pages Section (hidden by default) */
+.book-item .details .pages {
+    font-size: 0.8em;
+    color: #d4a373;
+    margin-top: 5px;
+}
+
+/* Show Pages when hovering */
+.book-item:hover .details .pages {
+    display: block;
+}
